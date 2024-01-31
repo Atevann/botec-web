@@ -1,5 +1,3 @@
 **botec-web
 
-git clone: https://github.com/Atevann/botec-web.git
-
-composer create-project laravel/laravel botec-web
+Для запуска проекта нужно ввести в терминал - php artisan serve --port=8080
