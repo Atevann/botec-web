@@ -1,0 +1,33 @@
+version: '3'
+services:
+    # Web- apache + php + laravel
+    botec-web:
+        container_name: botec-web
+        build:
+            context: web
+            dockerfile: Dockerfile
+        depends_on:
+            - botec-web-mysql
+        volumes:
+            - ../../:/usr/src/botec-web
+        ports:
+            - 80:80
+    # Database
+    # botec-web-mysql:
+    #     container_name: botec-web
+    #     build:
+    #         context: database
+    #         dockerfile: Dockerfile
+    #     restart: always
+    #     volumes:
+    #         - botec-web-mysql-data:/var/lib/mysql
+    #     ports:
+    #         - 3326:3306
+
+# Network to communicate with botec-web-messenger
+networks:
+    bridge:
+        external: true
+
+volumes:
+    botec-web-mysql-data: {}
