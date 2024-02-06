@@ -1,0 +1,12 @@
+version: '3'
+services:
+    # Web- apache + php + laravel
+    botec-web:
+        container_name: botec-web
+        build:
+            context: web
+            dockerfile: Dockerfile
+        volumes:
+            - ../../:/usr/src/botec-web
+        ports:
+            - 8080:80
