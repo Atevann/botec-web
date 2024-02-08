@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: botec-web
+      MYSQL_DATABASE: botec-web
+      MYSQL_USER: botec-web
+      MYSQL_PASSWORD: botec-web
+    ports:
+      - "8080:80"
+       networks:
+      - botec-web
+
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    networks:
+      - botec-web
+
+networks:
+  my_network:
+    driver: bridge

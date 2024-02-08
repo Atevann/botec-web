@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+        // код проверки соединения с базой данных и вывода сообщения
     return view('welcome');
+});
+
+Route::get('/health', function () {
+    try {
+        DB::connection()->getPdo();
+        return 'Соединение с базой данных установлено: успешно!';
+    } catch (\Exception $e) {
+        return 'Ошибка соединения с базой данных: ' . $e->getMessage();
+    }
 });
