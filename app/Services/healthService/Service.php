@@ -14,19 +14,13 @@ use Spatie\LaravelIgnition\Http\Controllers\HealthCheckController;
 */
 class Service
 {
-    public function execute($statusArray)
+    public function execute(): array
     {
-        return view('status', ['statusArray' => $statusArray]);
-    }
-    public function checkStatus()
-    {
-        $dbStatus = $this->checkDatabase();
-        $statusArray = [];
-        $statusArray[] = $dbStatus;
+        $statusArray = [$this->checkDatabase()];
 
         return $statusArray;
     }
-    protected function checkDatabase()
+    protected function checkDatabase(): DTO
     {
         $dbStatus = new DTO();
         $dbStatus->setName('Database');

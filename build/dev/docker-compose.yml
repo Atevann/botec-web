@@ -15,7 +15,6 @@ services:
       - db
 
   db:
-    image: mysql:latest
     container_name: botec-mysql
     build:
           context: database

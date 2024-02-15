@@ -22,4 +22,4 @@ Route::get('/', function ()
 
 
 
-Route::get('/database', [healthController::class, 'checkStatus']);
+Route::get('/health', [HealthController::class, 'checkStatus']);
