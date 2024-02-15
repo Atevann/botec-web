@@ -1,17 +1,7 @@
 version: '3'
 services:
-  db:
-    image: mysql:latest
-    container_name: botec-mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: botec-web
-      MYSQL_DATABASE: botec-web
-      MYSQL_USER: botec-web
-      MYSQL_PASSWORD: botec-web
-    ports:
-      - "3306:3306"
-      
+    # Web- apache + php + laravel
+
   botec-web:
     container_name: botec-web
     build:
@@ -23,3 +13,18 @@ services:
       - "8080:80"
     depends_on:
       - db
+
+  db:
+    image: mysql:latest
+    container_name: botec-mysql
+    build:
+          context: database
+          dockerfile: Dockerfile
+    restart: always
+    volumes: 
+    - ../../:/usr/src/botec-web
+    ports:
+      - "3306:3306"
+
+volumes:
+  botec-mysql:

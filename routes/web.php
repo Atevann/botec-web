@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Providers\healthService;
+use App\Services\healthService\Service;
+use App\Http\Controllers\healthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,9 @@ use App\Providers\healthService;
 
 Route::get('/', function () 
 {
-        // код проверки соединения с базой данных и вывода сообщения
     return view('welcome');
 });
 
 
 
-Route::get('/healthService', [healthService::class, 'checkStatus']);
+Route::get('/database', [healthController::class, 'checkStatus']);
