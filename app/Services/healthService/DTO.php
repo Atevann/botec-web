@@ -12,19 +12,16 @@ class DTO
 /**
 * переменная для названия базы данных
 */
-
     private string $name;
 
 /**
 * переменная для выявления статуса базы данных
 */
-
     private string $status;
 
 /**
 * переменная для выявления ошибки базы данных
 */  
-
     private ?\Exception $error = null;
 
     public function getName(): string
