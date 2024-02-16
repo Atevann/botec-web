@@ -23,7 +23,6 @@ class Service
 
         return $statusArray;
     }
-
 /**
 * Метод checkDatabase для проверки работоспособности базы данных
 */

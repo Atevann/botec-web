@@ -12,6 +12,7 @@ class DTO
 /**
 * переменная для названия базы данных
 */
+
     private string $name;
 
 /**
