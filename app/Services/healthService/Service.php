@@ -1,25 +1,33 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Services\healthService;
+namespace App\Services\HealthService;
  
-use App\Http\Controllers\healthController;
 use Illuminate\Support\Facades\DB;
-use App\Services\healthService\DTO;
-use Spatie\LaravelIgnition\Http\Controllers\HealthCheckController;
+use App\Services\HealthService\DTO;
 
 
 /**
-* Параметр для выявления статуса базы данных
+* Сервис для проверки работоспособности приложения
 */
+
 class Service
 {
+/**
+* Метод execute для получения данных от метода checkDatabase и для передачи в HealthController
+*/
+
     public function execute(): array
     {
         $statusArray = [$this->checkDatabase()];
 
         return $statusArray;
     }
+
+/**
+* Метод checkDatabase для проверки работоспособности базы данных
+*/
+
     protected function checkDatabase(): DTO
     {
         $dbStatus = new DTO();
@@ -30,10 +38,9 @@ class Service
             $dbStatus->setStatus('OK');
         } catch (\Exception $e) {
             $dbStatus->setStatus('Fail');
-            $dbStatus->setError('- ' . $e->getMessage());
+            $dbStatus->setError($e);
         }
         
         return $dbStatus;
     } 
 }
-

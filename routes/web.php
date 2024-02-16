@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Services\healthService\Service;
-use App\Http\Controllers\healthController;
+use App\Http\Controllers\HealthController;
 
 /*
 |--------------------------------------------------------------------------

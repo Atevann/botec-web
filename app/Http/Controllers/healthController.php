@@ -1,13 +1,21 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 use App\Services\healthService\Service;
-use resources\views;
+
+
+/**
+* Healthcontroller подключаем базовый контроллер
+*/
 
 class HealthController extends BaseController
 {
+/**
+* метод checkStatus чтобы получать проверенные данные от Service 
+*/
     public function checkStatus()
     {
         $healthService = new Service();

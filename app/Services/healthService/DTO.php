@@ -1,41 +1,57 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Services\healthService;
+namespace App\Services\HealthService;
 
-use Illuminate\Support\Facades\DB;
-use App\Services\healthService\Service;
-use App\Http\Controllers;
 
 /**
-* Параметр с переменными для обозначения названия, статуса и выявления ошибок
+* DTO для описания статуса работоспособности приложения
 */
 class DTO
 {
+/**
+* переменная для названия базы данных
+*/
     private string $name;
+
+/**
+* переменная для выявления статуса базы данных
+*/
+
     private string $status;
-    private string $error;
-    public function getName():string
+
+/**
+* переменная для выявления ошибки базы данных
+*/  
+
+    private ?\Exception $error = null;
+
+    public function getName(): string
     {
         return $this->name;
     }
+
     public function setName(string $name)
     {
         $this->name = $name;
     }
+
     public function getStatus(): string 
     {
         return $this->status;
     }
+
     public function setStatus(string $status)
     {
         $this->status = $status;
-    }    
-    public function getError(): string
+    }  
+
+    public function getError(): ?\Exception
     {
-        return $this->error ?? "";
+        return $this->error;
     }
-    public function setError(string $error)
+    
+    public function setError(?\Exception $error)
     {
         $this->error = $error;
     }
