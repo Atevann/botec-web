@@ -8,19 +8,17 @@ use App\Services\HealthService\Service;
 
 
 /**
-* Healthcontroller подключаем базовый контроллер
-*/
-
+ *  Контроллер состояния сервисов
+ */
 class HealthController extends BaseController
 {
-/**
-* метод checkStatus чтобы получать проверенные данные от Service 
-*/
+    /**
+     * Возвращает состояние всех сервисов
+     */
     public function checkStatus()
     {
         $healthService = new Service();
-
-        $statusArray = $healthService->execute();
+        $statusArray   = $healthService->execute();
 
         return view('status', ['statusArray' => $statusArray]);
     }

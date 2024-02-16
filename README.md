@@ -1,6 +1,9 @@
 # botec-web
 Botec web interface
 
-Зависимости нужно через composer подтянуть: composer install  & composer update  (нужно перейти в корневую папку botec-web)
-Для запуска докер нужно перейти в дир: /build/dev
-Для запуска докер: docker-compose up
+Установка зависимостей: composer install
+
+Запуск проекта: 
+ - Копировать файл .env.example в .env и при необходимости внести изменения
+ - Перейти в build/dev
+ - Выполнить docker-compose up

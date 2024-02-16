@@ -1,5 +1,4 @@
-# Контейнер для базы данных botec-mysql
-
+# Контейнер БД mysql
 FROM mysql:latest
 ENV MYSQL_ROOT_PASSWORD botec-web
 ENV MYSQL_DATABASE botec-web

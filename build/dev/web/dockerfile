@@ -1,5 +1,4 @@
-# Контейнер для botec-web
-
+# Контейнер Apache + код
 FROM php:8.2-apache
 WORKDIR /usr/src/botec-web
 ENV APACHE_DOCUMENT_ROOT /usr/src/botec-web/public
