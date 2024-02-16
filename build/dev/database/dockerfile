@@ -1,0 +1,6 @@
+# Контейнер БД mysql
+FROM mysql:latest
+ENV MYSQL_ROOT_PASSWORD botec-web
+ENV MYSQL_DATABASE botec-web
+ENV MYSQL_USER botec-web
+ENV MYSQL_PASSWORD botec-web
