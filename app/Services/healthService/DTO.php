@@ -5,23 +5,23 @@ namespace App\Services\HealthService;
 
 
 /**
-* DTO для описания статуса работоспособности приложения
-*/
+ * DTO (Data transfer object) для описания статуса работоспособности приложения
+ */
 class DTO
 {
-/**
-* переменная для названия базы данных
-*/
+    /**
+     * Название сервиса
+     */
     private string $name;
 
-/**
-* переменная для выявления статуса базы данных
-*/
+    /**
+     * Статус (OK/Fail)
+     */
     private string $status;
 
-/**
-* переменная для выявления ошибки базы данных
-*/  
+    /**
+     * Ошибка состояния сервиса
+     */
     private ?\Exception $error = null;
 
     public function getName(): string
@@ -29,27 +29,27 @@ class DTO
         return $this->name;
     }
 
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    public function getStatus(): string 
+    public function getStatus(): string
     {
         return $this->status;
     }
 
-    public function setStatus(string $status)
+    public function setStatus(string $status): void
     {
         $this->status = $status;
-    }  
+    }
 
     public function getError(): ?\Exception
     {
         return $this->error;
     }
-    
-    public function setError(?\Exception $error)
+
+    public function setError(?\Exception $error): void
     {
         $this->error = $error;
     }

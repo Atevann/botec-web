@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Mont, Verdana, Geneva, Tahoma, sans-serif;
+    src: url(../fonts/Montserrat-Light.ttf);
+    font-weight: 300;
+    font-size: 15px;
+}
+
+:root {
+    --name_book: rgb(0, 255, 8);
+}
+
+:root {
+    --head_book: yellow;
+}
+
+.navigation {
+    display: flex;
+    gap: 51px;
+    margin: 0 0 0 20px;
+    margin-left: 10px;
+}
+
+.navigation {
+    color: var(--name_book);
+}
+
+.navigation__link:hover {
+    color: var(--head_book);
+}
+
+h1 {
+    font-family: Mont, sans-serif;
+}
+
+.center-img {
+    text-align: center;
+}
+
+.face_menu {
+    color: cornflowerblue;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.navigation_menu {
+    color: #8a3939;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: bold;
+}
+
+.paragraph_style {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #7D7987;
+}
+
+.face_menu_2 {
+    color: colar;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 80px;
+}

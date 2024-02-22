@@ -1,7 +1,6 @@
 version: '3'
 services:
-    # Web- apache + php + laravel
-
+  # Web- apache + php + laravel
   botec-web:
     container_name: botec-web
     build:
@@ -14,16 +13,26 @@ services:
     depends_on:
       - db
 
+  # БД mysql
   db:
     container_name: botec-mysql
     build:
           context: database
           dockerfile: Dockerfile
     restart: always
-    volumes: 
-    - ../../:/usr/src/botec-web
+    volumes:
+      - ../../:/usr/src/botec-web
     ports:
       - "3306:3306"
+    
+  #Сервис npm  
+  npm:
+    build:
+      context: .
+      dockerfile: dockerfile.npm
+    volumes:
+      - ../../:/usr/src/botec-web
 
+# Хранилище БД
 volumes:
   botec-mysql:
