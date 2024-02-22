@@ -24,14 +24,6 @@ services:
       - ../../:/usr/src/botec-web
     ports:
       - "3306:3306"
-    
-  #Сервис npm  
-  npm:
-    build:
-      context: .
-      dockerfile: dockerfile.npm
-    volumes:
-      - ../../:/usr/src/botec-web
 
 # Хранилище БД
 volumes:
