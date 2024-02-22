@@ -7,5 +7,5 @@ build-static:
 		-w /usr/src/botec-web \
 		node:latest \
 		/bin/sh -c \
-		"npm install && npm run dev"
+		"npm install && npm run build"
 
