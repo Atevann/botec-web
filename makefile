@@ -1,5 +1,5 @@
 # Собирает статику
-build-static:
+build-static-win:
 	docker run \
 		--rm \
 		-v %CD%:/usr/src/botec-web \
