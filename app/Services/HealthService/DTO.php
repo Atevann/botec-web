@@ -5,7 +5,7 @@ namespace App\Services\HealthService;
 
 
 /**
- * DTO для описания статуса работоспособности приложения
+ * DTO (Data transfer object) для описания статуса работоспособности приложения
  */
 class DTO
 {

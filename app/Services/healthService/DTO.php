@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Services\HealthService;
 
+
 /**
  * DTO (Data transfer object) для описания статуса работоспособности приложения
  */
