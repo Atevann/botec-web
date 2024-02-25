@@ -1,4 +1,4 @@
-# Собирает статику
+# Собирает статику для Windows
 build-static-win:
 	docker run \
 		--rm \
@@ -8,6 +8,7 @@ build-static-win:
 		/bin/sh -c \
 		"npm install && npm run build"
 
+# Собирает статику для Linux
 build-static:
 	docker run \
 		--rm \
