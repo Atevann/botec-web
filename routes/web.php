@@ -3,7 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HealthController;
-use App\Http\Middleware\Localization;
 
 
 /*
@@ -17,18 +16,10 @@ use App\Http\Middleware\Localization;
 |
 */
 
-Route::get('/', function () {
-    $today = \Carbon\Carbon::now()
-        ->settings(
-            [
-                'locale' => app()->getLocale(),
-            ]
-        );
-    // LL is macro placeholder for MMMM D, YYYY (you could write same as dddd, MMMM D, YYYY)
-    $dateMessage = $today->isoFormat('dddd, LL');
-    return view('welcome', [
-        'date_message' => $dateMessage
-    ]);
+Route::get('language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
 });
 
 Route::get('/dashboard', function () {
