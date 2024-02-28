@@ -34,13 +34,14 @@
     </x-slot>
 
     <x-slot name="content">
-        <x-dropdown-link :href="route('profile.edit')">
-            RU
-        </x-dropdown-link>
-        <x-dropdown-link :href="route('profile.edit')">
-            EN
-        </x-dropdown-link>
-    </x-slot>
+        @csrf
+        <button type="submit">RU</button>
+    </form>
+
+        @csrf
+        <button type="submit">EN</button>
+    </form>
+</x-slot>
 </x-dropdown>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
