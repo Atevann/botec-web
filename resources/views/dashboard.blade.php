@@ -9,11 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
+                {{ __('logins.You are logged in!') }}
             <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-            {{ __('Welcome to our website!') }}
-                <br>
-                {{ __('Welcome to our website, :Name', ['name' => 'amanda']) }}
-                <br>
+            {{ __('logins.Welcome to our website!') }}
             </div>
             </div>
         </div>
