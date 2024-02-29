@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
 
                         <x-dropdown-link href="http://127.0.0.1:8080/dashboard">Dashboard</x-dropdown-link>
-                        <x-dropdown-link href="http://127.0.0.1:8080/welcome">Welcome</x-dropdown-link>
+                        <x-dropdown-link href="http://127.0.0.1:8080">Welcome</x-dropdown-link>
                         <x-dropdown-link href="http://127.0.0.1:8080/health">Status</x-dropdown-link>
                     </x-nav-link>
                 </div>

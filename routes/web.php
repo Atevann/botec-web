@@ -22,6 +22,10 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
