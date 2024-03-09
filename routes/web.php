@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HealthController;
+use App\Http\Controllers\LanguageController;
 
 
 /*
@@ -16,11 +17,8 @@ use App\Http\Controllers\HealthController;
 |
 */
 
-Route::get('language/{locale}', function ($locale) {
-    app()->setLocale($locale);
-    session()->put('locale', $locale);
-    return redirect()->back();
-});
+
+Route::get('/language', [LanguageController::class, 'setLanguage'])->name('setlanguage');
 
 Route::get('/', function () {
     return view('welcome');

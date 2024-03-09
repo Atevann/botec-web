@@ -108,7 +108,7 @@ return [
     */
     'available_locales' => [
         'English' => 'en',
-        'Russian' => 'ru',
+        'Русский' => 'ru',
     ],
 
     /*

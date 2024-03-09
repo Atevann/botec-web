@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,11 +19,21 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        view()->composer('partials.language_switcher', function ($view) {
+        $this->composeLanguageSwitcher();
+    }
+
+    /**
+     * Compose переключает(меняет) языки
+     *
+     * @return void
+     */
+    protected function composeLanguageSwitcher()
+    {
+        view()->composer('layouts.navigation', function ($view) {
             $view->with('current_locale', app()->getLocale());
-            $view->with('available_locales', config('app.available_locales'));
-        });
+            $view->with('available_locales', config('app.available_locales'));            
+    });
     }
 }

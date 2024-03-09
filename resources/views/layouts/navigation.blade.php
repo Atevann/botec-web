@@ -34,8 +34,11 @@
     </x-slot>
 
     <x-slot name="content">
-        @csrf
-        @include('partials/language_switcher')
+    @foreach($available_locales as $locale_name => $locale_value)
+    <x-dropdown-link :href="route('setlanguage', ['lang' => $available_locale])">
+        {{($locale_name)}}
+    </x-dropdown-link>
+    @endforeach
 </x-slot>
 </x-dropdown>
                 <x-dropdown align="right" width="48">
