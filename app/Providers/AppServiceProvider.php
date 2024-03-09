@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Providers;
 
@@ -19,21 +20,19 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot()
+    public function boot(): void
     {
-        $this->composeLanguageSwitcher();
+        $this->addAvailableLocalesToNavigationView();
     }
 
     /**
      * Compose переключает(меняет) языки
-     *
-     * @return void
      */
-    protected function composeLanguageSwitcher()
+    protected function addAvailableLocalesToNavigationView(): void
     {
         view()->composer('layouts.navigation', function ($view) {
             $view->with('current_locale', app()->getLocale());
             $view->with('available_locales', config('app.available_locales'));            
-    });
+        });
     }
 }

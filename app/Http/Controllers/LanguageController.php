@@ -18,8 +18,7 @@ class LanguageController extends Controller
     {
         $language = $request->string('lang')->value();
 
-        if ($language && in_array($language, config('app.available_locales')))
-        {
+        if ($language && in_array($language, config('app.available_locales'))) {
             Session::put('locale', $language);
         }
 

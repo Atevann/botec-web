@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('') }}
+        {{ __('profile.reset_password') }}
     </div>
 
     <!-- Session Status -->
@@ -18,7 +18,7 @@
 
         <div class="flex items-center justify-end mt-4">
             <x-primary-button>
-                {{ __('profile.resetpasswordlink') }}
+                {{ __('profile.reset_password_link') }}
             </x-primary-button>
         </div>
     </form>

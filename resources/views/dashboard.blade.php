@@ -9,9 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                {{ __('passwords.LoggedIn') }}
+                {{ __('auth.log_in') }}
             <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-            {{ __('passwords.WelcomeKey') }}
+            {{ __('profile.welcome_key') }}
             </div>
             </div>
         </div>
