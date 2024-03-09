@@ -20,4 +20,6 @@ return [
     'user' => "We can't find a user with that email address.",
     'WelcomeKey' => 'Welcome to our website!',    
     'LoggedIn' => 'You are logged in!',
+    'loggin' => 'Log in',
+    'forgotpass' => 'Forgot your password?',
 ];
