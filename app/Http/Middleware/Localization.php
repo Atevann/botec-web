@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
+/**
+* middleware для установки языка.
+*/
 class Localization
 {
-    /**
-    * middleware для установки языка.
-    */
     public function handle(Request $request, Closure $next): mixed
     {
         if (Session::has('locale')) {
